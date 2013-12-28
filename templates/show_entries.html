@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
+
+ <select class="ind">
+<option value="--">--</option>
+ {% for entry in entries %}
+  <option value="{{ entry.nombre }}" >{{ entry.nombre }}</option>
+ {% endfor %}
+</select> 
+
+
+<script>
+ $( document ).ready(function() {
+
+
+function obtvalor(){
+$("#PIB_70_85").hide();
+$("#PIB_85_98").hide();
+var valor = $("select.ind option:selected").val();
+if(valor=="PIB_70_85"){
+	$("#PIB_70_85").show();
+}
+else if(valor=="PIB_85_98"){
+	$("#PIB_85_98").show();
+}
+}
+
+$("select").change(obtvalor);
+obtvalor();
+
+});
+</script>
+
+<table id="PIB_70_85" class="setenta">
+ <caption>PIB Regional 1970-1985</caption>
+  <tr>
+    <th>Región</th>
+    <th>1970</th>
+    <th>1971</th>
+    <th>1972</th>
+    <th>1973</th>
+    <th>1974</th>
+    <th>1975</th>
+    <th>1976</th>
+    <th>1977</th>
+    <th>1978</th>
+    <th>1979</th>
+    <th>1980</th>
+    <th>1981</th>
+    <th>1982</th>
+    <th>1983</th>
+    <th>1984</th>
+    <th>1985</th>
+  </tr>
+  {% for entry2 in entries2 %}
+  <tr>
+    <th>{{ entry2.region }}</th>
+    <td>{{ entry2.setenta }}</td>
+    <td>{{ entry2.setentauno }}</td>
+    <td>{{ entry2.setentados }}</td>
+    <td>{{ entry2.setentatres }}</td>
+    <td>{{ entry2.setentacuatro }}</td>
+    <td>{{ entry2.setentacinco }}</td>
+    <td>{{ entry2.setentaseis }}</td>
+    <td>{{ entry2.setentasiete }}</td>
+    <td>{{ entry2.setentaocho }}</td>
+    <td>{{ entry2.setentanueve }}</td>
+    <td>{{ entry2.ochenta }}</td>
+    <td>{{ entry2.ochentauno }}</td>
+    <td>{{ entry2.ochentados }}</td>
+    <td>{{ entry2.ochentatres }}</td>
+    <td>{{ entry2.ochentacuatro }}</td>
+    <td>{{ entry2.ochentacinco }}</td>
+  </tr>
+  {% endfor %}
+ </table>
+
+<table id="PIB_85_98" class="ochenta">
+ <caption>PIB Regional 1985-1998</caption>
+  <tr>
+    <th>Región</th>
+    <th>1985</th>
+    <th>1986</th>
+    <th>1987</th>
+    <th>1988</th>
+    <th>1989</th>
+    <th>1990</th>
+    <th>1991</th>
+    <th>1992</th>
+    <th>1993</th>
+    <th>1994</th>
+    <th>1995</th>
+    <th>1996</th>
+    <th>1997</th>
+    <th>1998</th>
+  </tr>
+  {% for entry3 in entries3 %}
+  <tr>
+    <th>{{ entry3.region }}</th>
+    <td>{{ entry3.ochentacinco }}</td>
+    <td>{{ entry3.ochentaseis }}</td>
+    <td>{{ entry3.ochentasiete }}</td>
+    <td>{{ entry3.ochentaocho }}</td>
+    <td>{{ entry3.ochentanueve }}</td>
+    <td>{{ entry3.noventa }}</td>
+    <td>{{ entry3.noventauno }}</td>
+    <td>{{ entry3.noventados }}</td>
+    <td>{{ entry3.noventatres }}</td>
+    <td>{{ entry3.noventacuatro }}</td>
+    <td>{{ entry3.noventacinco }}</td>
+    <td>{{ entry3.noventaseis }}</td>
+    <td>{{ entry3.noventasiete }}</td>
+    <td>{{ entry3.noventaocho }}</td>
+  </tr>
+  {% endfor %}
+ </table>
+
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends "show_entries.html" %}
+
+{% block content %}
+
+ <table>
+ <caption>PIB Regional 1970-1985</caption>
+  <tr>
+    <th>Región</th>
+    <th>1970</th>
+    <th>1971</th>
+    <th>1972</th>
+    <th>1973</th>
+    <th>1974</th>
+    <th>1975</th>
+    <th>1976</th>
+    <th>1977</th>
+    <th>1978</th>
+    <th>1979</th>
+    <th>1980</th>
+    <th>1981</th>
+    <th>1982</th>
+    <th>1983</th>
+    <th>1984</th>
+    <th>1985</th>
+  </tr>
+  {% for entry in entries %}
+  <tr>
+    <th>{{ entry.region }}</th>
+    <td>{{ entry.setenta }}</td>
+    <td>{{ entry.setentauno }}</td>
+    <td>{{ entry.setentados }}</td>
+    <td>{{ entry.setentatres }}</td>
+    <td>{{ entry.setentacuatro }}</td>
+    <td>{{ entry.setentacinco }}</td>
+    <td>{{ entry.setentaseis }}</td>
+    <td>{{ entry.setentasiete }}</td>
+    <td>{{ entry.setentaocho }}</td>
+    <td>{{ entry.setentanueve }}</td>
+    <td>{{ entry.ochenta }}</td>
+    <td>{{ entry.ochentauno }}</td>
+    <td>{{ entry.ochentados }}</td>
+    <td>{{ entry.ochentatres }}</td>
+    <td>{{ entry.ochentacuatro }}</td>
+    <td>{{ entry.ochentacinco }}</td>
+  </tr>
+  {% endfor %}
+ </table>
+
+{% endblock content %}
