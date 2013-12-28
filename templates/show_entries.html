@@ -19,12 +19,22 @@
 function obtvalor(){
 $("#PIB_70_85").hide();
 $("#PIB_85_98").hide();
+$("#PIB_96_04").hide();
+$("#70").hide();
+$("#85").hide();
+$("#96").hide();
 var valor = $("select.ind option:selected").val();
 if(valor=="PIB_70_85"){
 	$("#PIB_70_85").show();
+	$("#70").show();
 }
 else if(valor=="PIB_85_98"){
 	$("#PIB_85_98").show();
+	$("#85").show();
+}
+else if(valor=="PIB_96_04"){
+	$("#PIB_96_04").show();
+	$("#96").show();
 }
 }
 
@@ -118,5 +128,54 @@ obtvalor();
   {% endfor %}
  </table>
 
+<table id="PIB_96_04">
+ <caption>PIB Regional 1996-2004</caption>
+  <tr>
+    <th>Región</th>
+    <th>1996</th>
+    <th>1997</th>
+    <th>1998</th>
+    <th>1999</th>
+    <th>2000</th>
+    <th>2001</th>
+    <th>2002</th>
+    <th>2003</th>
+    <th>2004</th>
+  </tr>
+  {% for entry4 in entries4 %}
+  <tr>
+    <th>{{ entry4.region }}</th>
+    <td>{{ entry4.noventaseis }}</td>
+    <td>{{ entry4.noventasiete }}</td>
+    <td>{{ entry4.noventaocho }}</td>
+    <td>{{ entry4.noventanueve }}</td>
+    <td>{{ entry4.dosmil }}</td>
+    <td>{{ entry4.dosmiluno }}</td>
+    <td>{{ entry4.dosmildos }}</td>
+    <td>{{ entry4.dosmiltres }}</td>
+    <td>{{ entry4.dosmilcuartro }}</td>
+  </tr>
+  {% endfor %}
+ </table>
+
+<p id="70">
+Las cifras del producto interno bruto regional del período 1980-1985, aquí expuestas y que se publicaron en la primera edición del libro "Indicadores Económicos y Sociales Regionales de Chile", tuvieron carácter provisional y, posteriormente, no fueron ajustadas a las cifras definitivas de las cuentas nacionales del mismo período.
+
+No regionalizado corresponde a Tributación a las importaciones.
+
+Volúmenes expresados en millones de pesos a precios constantes de 1977.
+</p>
+
+<p id="85">
+No regionalizado corresponde a servicios en el exterior del sector administración pública.
+
+Volúmenes expresados en millones de pesos a precios constantes de 1986.
+</p>
+
+<p id="96">
+No regionalizado corresponde a servicios en el exterior del sector administración pública.
+Volúmenes expresados en millones de pesos a precios constantes de 1996.
+
+</p>
 
 {% endblock content %}

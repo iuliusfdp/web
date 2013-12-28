@@ -1,12 +1,4 @@
 drop table if exists entries;
-
-create table user (
-  id integer primary key autoincrement,
-  name text not null,
-  user text not null unique,
-  pass text not null
-);
-
 create table pib7085 (
   id integer primary key autoincrement,
   region text not null,
@@ -47,16 +39,40 @@ create table pib8598 (
   noventaocho integer not null
 );
 
+create table pib9604 (
+  id integer primary key autoincrement,
+  region text not null,
+  noventaseis integer not null,
+  noventasiete integer not null,
+  noventaocho integer not null,
+  noventanueve integer not null,
+  dosmil integer not null,
+  dosmiluno integer not null,
+  dosmildos integer not null,
+  dosmiltres integer not null,
+  dosmilcuartro integer not null
+
+
+);
+
+create table user (
+  id integer primary key autoincrement,
+  name text not null,
+  user text not null unique,
+  pass text not null
+);
+
+
 create table indices(
 	id integer primary key autoincrement,
 	nombre text not null
 );
 
-insert into user (name, user, pass) values ("Administrador", "admin", "1234");
-
 insert into indices(nombre) values ("PIB_70_85");
 insert into indices(nombre) values ("PIB_85_98");
+insert into indices(nombre) values ("PIB_96_04");
 
+insert into user (name, user, pass) values ("Administrador", "admin", "1234");
 
 insert into pib7085 (region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco) values ("Tarapacá", 6785, 7458, 7558, 7385, 7766, 7151, 7151, 7567, 9241, 9912, 11395, 11351, 10453, 10302, 11027, 11850);
 insert into pib7085 (region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco) values ("Antofagasta", 11547, 13238, 11930, 12321, 13872, 12177, 14789, 16091, 18063, 18400, 19657, 19401, 20425, 20081, 20687, 20446);
@@ -88,3 +104,22 @@ insert into pib8598 (region, ochentacinco, ochentaseis, ochentasiete, ochentaoch
 insert into pib8598 (region, ochentacinco, ochentaseis, ochentasiete, ochentaocho, ochentanueve, noventa, noventauno, noventados, noventatres, noventacuatro, noventacinco, noventaseis, noventasiete, noventaocho) values ("Magallanes", 99314, 100767, 106638, 105455, 117122, 117551, 122315, 122652, 123661, 119073, 122847, 125956, 132651, 135.035);
 insert into pib8598 (region, ochentacinco, ochentaseis, ochentasiete, ochentaocho, ochentanueve, noventa, noventauno, noventados, noventatres, noventacuatro, noventacinco, noventaseis, noventasiete, noventaocho) values ("Metropolitana", 1206464,  1298379, 1403977, 1500177, 1673117, 1736608, 1904349, 2174295, 2352444, 2422839, 2685251, 2866987, 3099931, 3200334);
 insert into pib8598 (region, ochentacinco, ochentaseis, ochentasiete, ochentaocho, ochentanueve, noventa, noventauno, noventados, noventatres, noventacuatro, noventacinco, noventaseis, noventasiete, noventaocho) values ("No Regionalizado", 8615, 8686, 8588, 8430, 8622, 8522, 8705, 8779, 8852, 8530, 8758, 8508, 8739, 8767);
+
+
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Tarapacá", 905701, 1030040, 1041193, 1115504, 1127226, 1118346, 1146401, 1282330, 1314834);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Antofagasta", 1944622, 2180219, 2451582, 2407789, 2364831, 2715008, 2619098, 2783064, 2960576);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Atacama",  586020, 624214, 663349, 652511, 641406,670345, 644260, 658387, 669684);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Coquimbo", 596301, 621919, 673140, 712495, 808604, 804736, 792281, 833625, 871530);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Valparaíso", 2658598, 2665348, 2772280, 2863018, 2925515, 3008323, 3072320, 3146202, 3357072);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("OHiggins", 1188356, 1236781, 1281905, 1294830, 1413408, 1452089, 1547509, 1541692, 1651278);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Maule", 1032923, 1097957, 1122601, 1117793, 1220088, 1284636, 1296565, 1333671, 1396846);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Biobío",  2780195, 2920144, 2935457, 2931537, 3027910, 3090250, 3268213, 3428271, 3634265);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ( "Araucanía", 773850, 823111, 847011, 838821, 896264, 883830, 914957, 928449, 987621);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Los Lagos",  1249677, 1395171, 1452791, 1456947, 1573873, 1632081, 1708070, 1730374, 1857127);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Aysén",  141716, 156021, 159580, 170167, 176601, 193555, 213608, 212481, 221201);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Magallanes", 401360, 422651, 444828, 454480, 436440, 457158, 473745, 485043, 487312);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("Metropolitana", 13945724,  14824797,  15048761,  14752778,  15460202,  15856994,  16199205,  16790574,  17754835);
+insert into pib9604 (region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro) values ("No Regionalizado", 35041, 36568,  38341,  39606,  41509,  43035,  43858,  44819,  45157);
+
+
+

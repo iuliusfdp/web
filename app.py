@@ -66,7 +66,9 @@ def show_entries():
     entries2 = cur2.fetchall()
     cur3 = db.execute('select region, ochentacinco, ochentaseis, ochentasiete, ochentaocho, ochentanueve, noventa, noventauno, noventados, noventatres, noventacuatro, noventacinco, noventaseis, noventasiete, noventaocho from pib8598')
     entries3 = cur3.fetchall()
-    return render_template('show_entries.html', entries=entries, entries2=entries2, entries3=entries3)
+    cur4 = db.execute('select region, noventaseis, noventasiete, noventaocho, noventanueve, dosmil, dosmiluno, dosmildos, dosmiltres, dosmilcuartro from pib9604')
+    entries4 = cur4.fetchall()
+    return render_template('show_entries.html', entries=entries, entries2=entries2, entries3=entries3, entries4=entries4)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -81,7 +83,7 @@ def login():
             user_data = matches[0]
             session['user'] = user
             session['name'] = user_data[1]
-            return redirect(url_for('show_entries'))
+            return redirect(url_for('show_tablas'))
         else:
             error = u"Usuario o contraseña incorrecto"
             return render_template('login.html', error=error)
@@ -100,7 +102,7 @@ def logout():
 @logged_in
 def show_tablas():
     db = get_db()
-    cur = db.execute('select region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco from pib7085')
+    cur = db.execute('')
     entries = cur.fetchall()
     return render_template('show_tablas.html', entries=entries)
 
