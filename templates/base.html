@@ -40,7 +40,17 @@
       <ul class="nav navbar-nav">
         <li><a href="{{url_for('index')}}">Index</a></li>
         <li><a href="{{url_for('show_entries')}}">Ver Datos</a></li>
-        <li><a href="{{url_for('show_tablas')}}">Quienes Somos</a></li>
+        <li><a href="{{url_for('show_tablas')}}">Analizar Datos</a></li>
+        {% if session.user %}
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ session.name }} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Configuración de la cuenta</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="{{url_for('logout')}}">Cerrar sesión</a></li>
+              </ul>
+            </li>
+        {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
   </div>

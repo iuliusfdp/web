@@ -46,6 +46,17 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
 
+
+def logged_in(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('user') is not None:
+            return f(*args, **kwargs)
+        else:
+            flash('Please log in first.', 'error')
+            return redirect(url_for('login'))
+    return decorated_function
+
 @app.route('/ver')
 def show_entries():
     db = get_db()
@@ -57,7 +68,36 @@ def show_entries():
     entries3 = cur3.fetchall()
     return render_template('show_entries.html', entries=entries, entries2=entries2, entries3=entries3)
 
-@app.route('/tabla')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user = request.form["user"]
+        password = request.form["password"]
+        db = get_db()
+        result = db.execute('select name, user from user where user=? and pass = ?', 
+                            [user, password])
+        matches = result.fetchall()
+        if len(matches) > 0: #The user and pass combination exits
+            user_data = matches[0]
+            session['user'] = user
+            session['name'] = user_data[1]
+            return redirect(url_for('show_entries'))
+        else:
+            error = u"Usuario o contraseña incorrecto"
+            return render_template('login.html', error=error)
+        
+    else:
+        return render_template('login.html')
+
+@app.route('/logout')
+@logged_in
+def logout():
+    # remove the user from the session if it's there
+    session.pop('user',None)
+    return redirect(url_for('index'))
+
+@app.route('/analisis')
+@logged_in
 def show_tablas():
     db = get_db()
     cur = db.execute('select region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco from pib7085')

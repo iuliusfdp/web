@@ -1,4 +1,12 @@
 drop table if exists entries;
+
+create table user (
+  id integer primary key autoincrement,
+  name text not null,
+  user text not null unique,
+  pass text not null
+);
+
 create table pib7085 (
   id integer primary key autoincrement,
   region text not null,
@@ -43,6 +51,8 @@ create table indices(
 	id integer primary key autoincrement,
 	nombre text not null
 );
+
+insert into user (name, user, pass) values ("Administrador", "admin", "1234");
 
 insert into indices(nombre) values ("PIB_70_85");
 insert into indices(nombre) values ("PIB_85_98");

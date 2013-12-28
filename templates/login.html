@@ -3,12 +3,11 @@
 {{ super() }}
 <link href="{{url_for('static', filename='signin.css')}}" rel="stylesheet">
 {% endblock head %}
-{% block menu %}
-{% endblock menu %}
+
 {% block content %}
 
   <form class="form-signin" name="login" action="{{url_for('login')}}" method="post">
-    <h2 class="form-signin-heading">Ingrese al sistema</h2>
+    <h2 class="form-signin-heading">Ingrese a opciones avanzadas</h2>
       <input type="text" class="form-control" placeholder="Nombre de usuario" required autofocus name="user">
       <input type="password" class="form-control" placeholder="Contraseña" required name="password">
       <label class="checkbox">
