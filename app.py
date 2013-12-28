@@ -102,7 +102,7 @@ def logout():
 @logged_in
 def show_tablas():
     db = get_db()
-    cur = db.execute('')
+    cur = db.execute('select setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco from pib7085 where region="Tarapacá"')
     entries = cur.fetchall()
     return render_template('show_tablas.html', entries=entries)
 

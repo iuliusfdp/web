@@ -1,7 +1,89 @@
-{% extends "show_entries.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
- 
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Región de Tarapacá 1970-1985</title>
+        <script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="static/barras.js"></script>
+    </head>
+    <body>
+	{% for entry in entries %}
+        <table width="200" border="0" id="data">
+            <tr>
+                <th>Año</th>
+                <th>PIB</th>
+            </tr>
+            <tr>
+                <td>1970</td>
+                <td>{{entry.setenta}}</td>
+            </tr>
+            <tr>
+                <td>1971</td>
+                <td>{{entry.setentauno}}</td>
+            </tr>
+            <tr>
+                <td>1972</td>
+                <td>{{entry.setentados}}</td>
+            </tr>
+            <tr>
+                <td>1973</td>
+                <td>{{entry.setentatres}}</td>
+            </tr>
+            <tr>
+                <td>1974</td>
+                <td>{{entry.setentacuatro}}</td>
+            </tr>
+            <tr>
+                <td>1975</td>
+                <td>{{entry.setentacinco}}</td>
+            </tr>
+            <tr>
+                <td>1976</td>
+                <td>{{entry.setentaseis}}</td>
+            </tr>
+            <tr>
+                <td>1977</td>
+                <td>{{entry.setentasiete}}</td>
+            </tr>
+            <tr>
+                <td>1978</td>
+                <td>{{entry.setentaocho}}</td>
+            </tr>
+            <tr>
+                <td>1979</td>
+                <td>{{entry.setentanueve}}</td>
+            </tr>
+            <tr>
+                <td>1980</td>
+                <td>{{entry.ochenta}}</td>
+            </tr>
+            <tr>
+                <td>1981</td>
+                <td>{{entry.ochentauno}}</td>
+            </tr>
+            <tr>
+                <td>1982</td>
+                <td>{{entry.ochentados}}</td>
+            </tr>
+            <tr>
+                <td>1983</td>
+                <td>{{entry.ochentatres}}</td>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>{{entry.ochentacuatro}}</td>
+            </tr>
+            <tr>
+                <td>1985</td>
+                <td>{{entry.ochentacinco}}</td>
+            </tr>
+        </table>
+	{% endfor %}
+        <canvas id="canvas" width="750" height="250"></canvas>
+    </body>
+</html>
 
 {% endblock content %}
