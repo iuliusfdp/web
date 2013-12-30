@@ -17,12 +17,12 @@ $(window).load(function(){
 	function obtenerValores()   
 	{   
 		// Valores   
-		$("#data tr td:nth-child(2)").each(function(){   
+		$("#data10 tr td:nth-child(2)").each(function(){   
 			valoresG.push($(this).text());   
 		});   
 		
 		//Etiquetas   
-		$("#data tr td:nth-child(1)").each(function(){   
+		$("#data10 tr td:nth-child(1)").each(function(){   
 			etiquetasX.push($(this).text());   
 		});  
 
@@ -31,7 +31,7 @@ $(window).load(function(){
 	function initCanvas ()   
 	{   
 		   
-		cv = $("#canvas").get(0);   
+		cv = $("#canvas10").get(0);   
 		if (!cv)   
 		{ return; }   
 		   
@@ -114,7 +114,7 @@ $(window).load(function(){
 			ctx.fillRect( x(index), y(valoresG[index]), ancho(), altura(valoresG[index]));   
 			ctx.restore();   
 		}   
-		$("#data").hide();
+		$("#data10").hide();
 	} 
 	
 	obtenerValores();

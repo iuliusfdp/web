@@ -2,88 +2,1112 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en-GB">
-    <head>
-        <title>Región de Tarapacá 1970-1985</title>
-        <script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="static/barras.js"></script>
-    </head>
-    <body>
-	{% for entry in entries %}
-        <table width="200" border="0" id="data">
-            <tr>
-                <th>Año</th>
-                <th>PIB</th>
-            </tr>
-            <tr>
-                <td>1970</td>
-                <td>{{entry.setenta}}</td>
-            </tr>
-            <tr>
-                <td>1971</td>
-                <td>{{entry.setentauno}}</td>
-            </tr>
-            <tr>
-                <td>1972</td>
-                <td>{{entry.setentados}}</td>
-            </tr>
-            <tr>
-                <td>1973</td>
-                <td>{{entry.setentatres}}</td>
-            </tr>
-            <tr>
-                <td>1974</td>
-                <td>{{entry.setentacuatro}}</td>
-            </tr>
-            <tr>
-                <td>1975</td>
-                <td>{{entry.setentacinco}}</td>
-            </tr>
-            <tr>
-                <td>1976</td>
-                <td>{{entry.setentaseis}}</td>
-            </tr>
-            <tr>
-                <td>1977</td>
-                <td>{{entry.setentasiete}}</td>
-            </tr>
-            <tr>
-                <td>1978</td>
-                <td>{{entry.setentaocho}}</td>
-            </tr>
-            <tr>
-                <td>1979</td>
-                <td>{{entry.setentanueve}}</td>
-            </tr>
-            <tr>
-                <td>1980</td>
-                <td>{{entry.ochenta}}</td>
-            </tr>
-            <tr>
-                <td>1981</td>
-                <td>{{entry.ochentauno}}</td>
-            </tr>
-            <tr>
-                <td>1982</td>
-                <td>{{entry.ochentados}}</td>
-            </tr>
-            <tr>
-                <td>1983</td>
-                <td>{{entry.ochentatres}}</td>
-            </tr>
-            <tr>
-                <td>1984</td>
-                <td>{{entry.ochentacuatro}}</td>
-            </tr>
-            <tr>
-                <td>1985</td>
-                <td>{{entry.ochentacinco}}</td>
-            </tr>
-        </table>
-	{% endfor %}
-        <canvas id="canvas" width="750" height="250"></canvas>
-    </body>
-</html>
 
+<script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="static/barras.js"></script>
+<script type="text/javascript" src="static/barras2.js"></script>
+<script type="text/javascript" src="static/barras3.js"></script>
+<script type="text/javascript" src="static/barras4.js"></script>
+<script type="text/javascript" src="static/barras5.js"></script>
+<script type="text/javascript" src="static/barras6.js"></script>
+<script type="text/javascript" src="static/barras7.js"></script>
+<script type="text/javascript" src="static/barras8.js"></script>
+<script type="text/javascript" src="static/barras9.js"></script>
+<script type="text/javascript" src="static/barras10.js"></script>
+<script type="text/javascript" src="static/barras11.js"></script>
+<script type="text/javascript" src="static/barras12.js"></script>
+<script type="text/javascript" src="static/barras13.js"></script>
+<script type="text/javascript" src="static/barras14.js"></script>
+<script type="text/javascript" src="static/barras15.js"></script>
+
+ <select class="ind">
+<option value="--">Seleccione Región</option>
+ {% for entry in entries %}
+       <option value="{{entry.region}}">{{entry.region}} PIBR 1970-1985</option>
+ {% endfor %}
+</select> 
+
+<script>
+ $( document ).ready(function() {
+
+
+	function obtvalor(){
+	$("table").hide();
+	$("canvas").hide();
+	var valor = $("select.ind option:selected").val();
+	if(valor=="Tarapacá"){
+		$("#canvas").show();
+	}
+	else if(valor == "Antofagasta"){
+		$("#canvas2").show();	
+	}
+	else if(valor == "Atacama"){
+		$("#canvas3").show();	
+	}
+	else if(valor == "Coquimbo"){
+		$("#canvas4").show();	
+	}
+	else if(valor == "Valparaíso"){
+		$("#canvas5").show();	
+	}
+	else if(valor == "OHiggins"){
+		$("#canvas6").show();	
+	}
+	else if(valor == "Maule"){
+		$("#canvas7").show();	
+	}
+	}
+
+	$("select").change(obtvalor);
+	obtvalor();
+
+});
+</script>
+{% for entry2 in entries2 %}
+<table width="200" border="0" id="data">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry2.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry2.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry2.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry2.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry2.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry2.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry2.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry2.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry2.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry2.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry2.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry2.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry2.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry2.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry2.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry2.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+<canvas id="canvas" width="800" height="300"></canvas>
+
+{% for entry3 in entries3 %}
+<table width="200" border="0" id="data2">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry3.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry3.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry3.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry3.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry3.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry3.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry3.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry3.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry3.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry3.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry3.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry3.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry3.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry3.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry3.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry3.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas2" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry5 in entries5 %}
+<table width="200" border="0" id="data4">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry5.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry5.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry5.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry5.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry5.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry5.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry5.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry5.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry5.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry5.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry5.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry5.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry5.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry5.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry5.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry5.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas4" width="800" height="300"></canvas>
+{% for entry6 in entries6 %}
+<table width="200" border="0" id="data5">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry6.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry6.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry6.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry6.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry6.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry6.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry6.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry6.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry6.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry6.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry6.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry6.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry6.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry6.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry6.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry6.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas5" width="800" height="300"></canvas>
+
+{% for entry7 in entries7 %}
+<table width="200" border="0" id="data6">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry7.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry7.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry7.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry7.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry7.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry7.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry7.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry7.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry7.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry7.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry7.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry7.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry7.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry7.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry7.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry7.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas6" width="800" height="300"></canvas>
+
+{% for entry8 in entries8 %}
+<table width="200" border="0" id="data7">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry8.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry8.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry8.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry8.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry8.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry8.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry8.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry8.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry8.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry8.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry8.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry8.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry8.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry8.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry8.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry8.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas7" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
+
+{% for entry4 in entries4 %}
+<table width="200" border="0" id="data3">
+    <tr>
+        <th>Año</th>
+        <th>PIB</th>
+    </tr>
+    <tr>
+        <td>1970</td>
+        <td>{{entry4.setenta}}</td>
+    </tr>
+    <tr>
+        <td>1971</td>
+        <td>{{entry4.setentauno}}</td>
+    </tr>
+    <tr>
+        <td>1972</td>
+        <td>{{entry4.setentados}}</td>
+    </tr>
+    <tr>
+        <td>1973</td>
+        <td>{{entry4.setentatres}}</td>
+    </tr>
+    <tr>
+        <td>1974</td>
+        <td>{{entry4.setentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1975</td>
+        <td>{{entry4.setentacinco}}</td>
+    </tr>
+    <tr>
+        <td>1976</td>
+        <td>{{entry4.setentaseis}}</td>
+    </tr>
+    <tr>
+        <td>1977</td>
+        <td>{{entry4.setentasiete}}</td>
+    </tr>
+    <tr>
+        <td>1978</td>
+        <td>{{entry4.setentaocho}}</td>
+    </tr>
+    <tr>
+        <td>1979</td>
+        <td>{{entry4.setentanueve}}</td>
+    </tr>
+    <tr>
+        <td>1980</td>
+        <td>{{entry4.ochenta}}</td>
+    </tr>
+    <tr>
+        <td>1981</td>
+        <td>{{entry4.ochentauno}}</td>
+    </tr>
+    <tr>
+        <td>1982</td>
+        <td>{{entry4.ochentados}}</td>
+    </tr>
+    <tr>
+        <td>1983</td>
+        <td>{{entry4.ochentatres}}</td>
+    </tr>
+    <tr>
+        <td>1984</td>
+        <td>{{entry4.ochentacuatro}}</td>
+    </tr>
+    <tr>
+        <td>1985</td>
+        <td>{{entry4.ochentacinco}}</td>
+    </tr>
+</table>
+{% endfor %}
+
+<canvas id="canvas3" width="800" height="300"></canvas>
 {% endblock content %}
