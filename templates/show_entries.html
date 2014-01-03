@@ -4,8 +4,8 @@
 {% block content %}
 <script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
 
- <select class="ind">
-<option value="--">--</option>
+ <select id="ind" class="form-control">
+<option value="--">Seleccione un índice</option>
  {% for entry in entries %}
   <option value="{{ entry.nombre }}" >{{ entry.nombre }}</option>
  {% endfor %}
@@ -23,7 +23,7 @@ $("#PIB_96_04").hide();
 $("#70").hide();
 $("#85").hide();
 $("#96").hide();
-var valor = $("select.ind option:selected").val();
+var valor = $("select.form-control option:selected").val();
 if(valor=="PIB_70_85"){
 	$("#PIB_70_85").show();
 	$("#70").show();
@@ -44,10 +44,10 @@ obtvalor();
 });
 </script>
 
-<table id="PIB_70_85" class="setenta">
+<table id="PIB_70_85" class="table table-hover">
  <caption>PIB Regional 1970-1985</caption>
   <tr>
-    <th>Región</th>
+    <th></th>
     <th>1970</th>
     <th>1971</th>
     <th>1972</th>
@@ -88,10 +88,10 @@ obtvalor();
   {% endfor %}
  </table>
 
-<table id="PIB_85_98" class="ochenta">
+<table id="PIB_85_98" class="table table-hover">
  <caption>PIB Regional 1985-1998</caption>
   <tr>
-    <th>Región</th>
+    <th></th>
     <th>1985</th>
     <th>1986</th>
     <th>1987</th>
@@ -128,10 +128,10 @@ obtvalor();
   {% endfor %}
  </table>
 
-<table id="PIB_96_04">
+<table id="PIB_96_04" class="table table-hover">
  <caption>PIB Regional 1996-2004</caption>
   <tr>
-    <th>Región</th>
+    <th></th>
     <th>1996</th>
     <th>1997</th>
     <th>1998</th>

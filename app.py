@@ -11,6 +11,9 @@ from flask import (Flask,
                 redirect,
                 g)
 
+import hashlib
+salt = "8k)b8g6"
+
 app = Flask(__name__)
 
 app.config.update(dict(
@@ -75,9 +78,10 @@ def login():
     if request.method == 'POST':
         user = request.form["user"]
         password = request.form["password"]
+	pass1 = hashlib.sha512((salt+password).encode("utf-8")).hexdigest()
         db = get_db()
         result = db.execute('select name, user from user where user=? and pass = ?', 
-                            [user, password])
+                            [user, pass1])
         matches = result.fetchall()
         if len(matches) > 0: #The user and pass combination exits
             user_data = matches[0]

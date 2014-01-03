@@ -72,7 +72,7 @@ insert into indices(nombre) values ("PIB_70_85");
 insert into indices(nombre) values ("PIB_85_98");
 insert into indices(nombre) values ("PIB_96_04");
 
-insert into user (name, user, pass) values ("Administrador", "admin", "1234");
+insert into user (name, user, pass) values ("Administrador", "admin", "384c49fc568ad82a1bc910eab0acc82ee76512faf78caae2932b6ba0c9869ac0463c310eb60d34b4c8c43029f14e2ed4f481e780f7bf8874776dc6802f0e7d39");
 
 insert into pib7085 (region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco) values ("Tarapacá", 6785, 7458, 7558, 7385, 7766, 7151, 7151, 7567, 9241, 9912, 11395, 11351, 10453, 10302, 11027, 11850);
 insert into pib7085 (region, setenta, setentauno, setentados, setentatres, setentacuatro, setentacinco, setentaseis, setentasiete, setentaocho, setentanueve, ochenta, ochentauno, ochentados, ochentatres, ochentacuatro, ochentacinco) values ("Antofagasta", 11547, 13238, 11930, 12321, 13872, 12177, 14789, 16091, 18063, 18400, 19657, 19401, 20425, 20081, 20687, 20446);

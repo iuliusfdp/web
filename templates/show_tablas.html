@@ -15,7 +15,7 @@ var rem1, rem2, rem3, rem4, rem5, rem6, rem7, rem8, rem9, rem10, rem11, rem12, r
 function obtvalor(){
 	$("table").hide();
 	limpiar();
-	var valor = $("select.ind option:selected").val();
+	var valor = $("select.form-control option:selected").val();
 	
 	if (valor=="Tarapacá"){
 		rem2 = $(".dos").detach();
@@ -410,7 +410,7 @@ function principal(){
 		for(index=0; index<valoresG.length; index++)   
 		{   
 			ctx.save();   
-			ctx.fillStyle = "#B7B7B7";   
+			ctx.fillStyle = "#99CCFF";   
 			ctx.fillRect( x(index), y(valoresG[index]), ancho(), altura(valoresG[index]));   
 			ctx.restore();   
 		}   
@@ -428,7 +428,7 @@ function principal(){
 </script>
 
 <body>
-<select class="ind">
+<select id="ind" class="form-control">
 <option value="--">Seleccione Región</option>
  {% for entry in entries %}
        <option value="{{entry.region}}">{{entry.region}} PIBR 1970-1985</option>
