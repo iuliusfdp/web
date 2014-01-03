@@ -40,12 +40,11 @@
       <ul class="nav nav-pills">
         <li><a href="{{url_for('index')}}">Index</a></li>
         <li><a href="{{url_for('show_entries')}}">Ver Datos</a></li>
-        <li><a href="{{url_for('login')}}">Iniciar Sesión</a></li>
+        <li><a href="{{url_for('show_tablas')}}">Análisis de Datos</a></li>
         {% if session.user %}
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ session.name }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="{{url_for('show_tablas')}}">Análisis de Datos</a></li>
                 <li><a href="{{url_for('logout')}}">Cerrar sesión</a></li>
               </ul>
             </li>

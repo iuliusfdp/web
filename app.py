@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 app.config.update(dict(
     DATABASE='entry.db',
-    DEBUG=True,
+    DEBUG=False,
     SECRET_KEY=u'0moHo~#3CD`M/:6'
 ))
 
