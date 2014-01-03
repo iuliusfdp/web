@@ -4,67 +4,439 @@
 
 
 <script type="text/javascript" src="static/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="static/barras.js"></script>
-<script type="text/javascript" src="static/barras2.js"></script>
-<script type="text/javascript" src="static/barras3.js"></script>
-<script type="text/javascript" src="static/barras4.js"></script>
-<script type="text/javascript" src="static/barras5.js"></script>
-<script type="text/javascript" src="static/barras6.js"></script>
-<script type="text/javascript" src="static/barras7.js"></script>
-<script type="text/javascript" src="static/barras8.js"></script>
-<script type="text/javascript" src="static/barras9.js"></script>
-<script type="text/javascript" src="static/barras10.js"></script>
-<script type="text/javascript" src="static/barras11.js"></script>
-<script type="text/javascript" src="static/barras12.js"></script>
-<script type="text/javascript" src="static/barras13.js"></script>
-<script type="text/javascript" src="static/barras14.js"></script>
-<script type="text/javascript" src="static/barras15.js"></script>
 
- <select class="ind">
+
+
+<script>
+
+$(document).ready(function(){
+var rem1, rem2, rem3, rem4, rem5, rem6, rem7, rem8, rem9, rem10, rem11, rem12, rem13, rem14;
+
+function obtvalor(){
+	$("table").hide();
+	limpiar();
+	var valor = $("select.ind option:selected").val();
+	
+	if (valor=="Tarapacá"){
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();
+		principal();	
+	}
+	else if(valor=="Antofagasta"){			
+		rem1 = $(".uno").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();
+		principal();
+	}
+	else if(valor=="Atacama"){			
+		rem1 = $(".uno").detach();
+		rem2 = $(".dos").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();
+		principal();
+	}
+	else if(valor=="Coquimbo"){			
+		rem1 = $(".uno").detach();
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();
+		principal();
+	}
+	else if(valor=="Valparaíso"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="OHiggins"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Maule"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Biobío"){
+		rem1 = $(".uno").detach();			
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Araucanía"){			
+		rem1 = $(".uno").detach();
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Los Lagos"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();
+		principal();
+	}
+	else if(valor=="Aysén"){
+		rem1 = $(".uno").detach();			
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem12 = $(".doce").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Magallanes"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem13 = $(".trece").detach();
+		rem14 = $(".catorce").detach();	
+		principal();
+	}
+	else if(valor=="Metropolitana"){	
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem14 = $(".catorce").detach();
+		principal();
+	}
+	else if(valor=="No Regionalizado"){			
+		rem1 = $(".uno").detach();		
+		rem2 = $(".dos").detach();
+		rem3 = $(".tres").detach();
+		rem4 = $(".cuatro").detach();
+		rem5 = $(".cinco").detach();
+		rem6 = $(".seis").detach();
+		rem7 = $(".siete").detach();
+		rem8 = $(".ocho").detach();
+		rem9 = $(".nueve").detach();
+		rem10 = $(".diez").detach();
+		rem11 = $(".once").detach();
+		rem12 = $(".doce").detach();
+		rem14 = $(".trece").detach();
+		principal();
+	}
+
+	if(rem1){
+		rem1.appendTo("body");
+	}
+	if(rem2){
+		rem2.appendTo("body");
+	}
+	if(rem3){
+		rem3.appendTo("body");
+	}
+	if(rem4){
+		rem4.appendTo("body");
+	}
+	if(rem5){
+		rem5.appendTo("body");
+	}
+	if(rem6){
+		rem6.appendTo("body");
+	}
+	if(rem7){
+		rem7.appendTo("body");
+	}
+	if(rem8){
+		rem8.appendTo("body");
+	}
+	if(rem9){
+		rem9.appendTo("body");
+	}
+	if(rem10){
+		rem10.appendTo("body");
+	}
+	if(rem11){
+		rem11.appendTo("body");
+	}
+	if(rem12){
+		rem12.appendTo("body");
+	}
+	if(rem13){
+		rem13.appendTo("body");
+	}
+	if(rem14){
+		rem14.appendTo("body");
+	}		
+}
+	$("select").change(obtvalor);
+	
+	obtvalor();
+	
+function limpiar(){
+	var oCanvas = document.getElementById("canvas");
+	var oContext = oCanvas.getContext("2d");
+	 
+	oContext.save();
+	oContext.fillStyle = "#FFF";
+	oContext.fillRect(0, 0, 800, 300);
+	oContext.restore();
+}
+
+function principal(){
+	var	espacioB = 20,
+	 	anchoB = 20,
+	    alturaC = 220,
+		nEtiquetasY = 8,
+		offsetX = 20,
+		anchoG =550,
+		alturaG=200;
+	
+	var maxVal,
+		valoresG = [],
+	    etiquetasX = [],
+		etiquetasY = [];
+	
+	var cv, ctx;
+	
+	function obtenerValores()   
+	{   
+		// Valores   
+		$("#data tr td:nth-child(2)").each(function(){   
+			valoresG.push($(this).text());   
+		});   
+		
+		//Etiquetas   
+		$("#data tr td:nth-child(1)").each(function(){   
+			etiquetasX.push($(this).text());   
+		});   
+	}
+	
+	function initCanvas ()   
+	{   
+		   
+		cv = $("#canvas").get(0);   
+		if (!cv)   
+		{ return; }   
+		   
+		ctx = cv.getContext('2d');   
+		if (!ctx)   
+		{ return; }   
+	}
+	
+	function valorMaximo (arr)   
+	{   
+		maxVal=0;   
+		
+		for(i=0; i<arr.length; i++)   
+		{   
+		if (maxVal<parseInt(arr[i]))   
+		{   
+		maxVal=parseInt(arr[i]);   
+		}   
+		}   
+		
+		maxVal*= 1.1;   
+	} 
+	
+	function escalar(param)   
+	{   
+		return  Math.round((param/maxVal)*alturaG);   
+	}
+	
+	function x (param)   
+	{   
+		return (param*anchoB)+((param+1)*espacioB)+offsetX;   
+	}
+	
+	function y (param)   
+	{   
+		return alturaG - escalar(param);   
+	} 
+	
+	function ancho()   
+	{   
+		return anchoB;   
+	}
+	
+	function altura(param)   
+	{   
+		return escalar(param);   
+	}
+	
+	function dibujarEtiquetasX()   
+	{   
+		ctx.save();   
+		ctx.font = "10px 'arial'";   
+		ctx.fillStyle = "#000";   
+		for(index=0; index<valoresG.length; index++)   
+		{   
+			ctx.fillText(etiquetasX[index], x(index), alturaG+17);   
+		}   
+		ctx.restore();   
+	} 
+	
+	function dibujarEtiquetasY()   
+	{   
+		ctx.save();   
+		for(index=0; index<nEtiquetasY; index++)   
+		{   
+			etiquetasY.push(Math.round(maxVal/nEtiquetasY*(index+1)));   
+			ctx.fillStyle = "#000";   
+			ctx.fillText(etiquetasY[index], offsetX-20, y(etiquetasY[index])+10);   
+		}   
+		ctx.fillText("0", offsetX, alturaG+7);   
+		ctx.restore();   
+	}
+	
+	function dibujarGraficoBarras()   
+	{  
+		for(index=0; index<valoresG.length; index++)   
+		{   
+			ctx.save();   
+			ctx.fillStyle = "#B7B7B7";   
+			ctx.fillRect( x(index), y(valoresG[index]), ancho(), altura(valoresG[index]));   
+			ctx.restore();   
+		}   
+		$("#data").hide();
+	} 
+	
+	obtenerValores();
+	initCanvas();
+	valorMaximo(valoresG);
+	dibujarEtiquetasX();
+	dibujarEtiquetasY();
+	dibujarGraficoBarras();
+}
+	});
+</script>
+
+<body>
+<select class="ind">
 <option value="--">Seleccione Región</option>
  {% for entry in entries %}
        <option value="{{entry.region}}">{{entry.region}} PIBR 1970-1985</option>
  {% endfor %}
 </select> 
 
-<script>
- $( document ).ready(function() {
-
-
-	function obtvalor(){
-	$("table").hide();
-	$("canvas").hide();
-	var valor = $("select.ind option:selected").val();
-	if(valor=="Tarapacá"){
-		$("#canvas").show();
-	}
-	else if(valor == "Antofagasta"){
-		$("#canvas2").show();	
-	}
-	else if(valor == "Atacama"){
-		$("#canvas3").show();	
-	}
-	else if(valor == "Coquimbo"){
-		$("#canvas4").show();	
-	}
-	else if(valor == "Valparaíso"){
-		$("#canvas5").show();	
-	}
-	else if(valor == "OHiggins"){
-		$("#canvas6").show();	
-	}
-	else if(valor == "Maule"){
-		$("#canvas7").show();	
-	}
-	}
-
-	$("select").change(obtvalor);
-	obtvalor();
-
-});
-</script>
 {% for entry2 in entries2 %}
-<table width="200" border="0" id="data">
+<table width="200" border="0" id="data" class="uno">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -135,10 +507,10 @@
     </tr>
 </table>
 {% endfor %}
-<canvas id="canvas" width="800" height="300"></canvas>
+
 
 {% for entry3 in entries3 %}
-<table width="200" border="0" id="data2">
+<table width="200" border="0" id="data" class="dos">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -210,10 +582,10 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas2" width="800" height="300"></canvas>
+
 
 {% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+<table width="200" border="0" id="data" class="tres">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -285,10 +657,10 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
+
 
 {% for entry5 in entries5 %}
-<table width="200" border="0" id="data4">
+<table width="200" border="0" id="data" class="cuatro">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -360,9 +732,9 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas4" width="800" height="300"></canvas>
+
 {% for entry6 in entries6 %}
-<table width="200" border="0" id="data5">
+<table width="200" border="0" id="data" class="cinco">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -434,10 +806,10 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas5" width="800" height="300"></canvas>
+
 
 {% for entry7 in entries7 %}
-<table width="200" border="0" id="data6">
+<table width="200" border="0" id="data" class="seis">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -509,10 +881,10 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas6" width="800" height="300"></canvas>
+
 
 {% for entry8 in entries8 %}
-<table width="200" border="0" id="data7">
+<table width="200" border="0" id="data" class="siete">
     <tr>
         <th>Año</th>
         <th>PIB</th>
@@ -584,530 +956,533 @@
 </table>
 {% endfor %}
 
-<canvas id="canvas7" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry9 in entries9 %}
+<table width="200" border="0" id="data" class="ocho">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry9.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry9.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry9.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry9.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry9.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry9.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry9.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry9.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry9.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry9.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry9.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry9.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry9.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry9.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry9.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry9.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry10 in entries10 %}
+<table width="200" border="0" id="data" class="nueve">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry10.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry10.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry10.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry10.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry10.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry10.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry10.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry10.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry10.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry10.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry10.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry10.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry10.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry10.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry10.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry10.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry11 in entries11 %}
+<table width="200" border="0" id="data" class="diez">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry11.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry11.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry11.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry11.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry11.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry11.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry11.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry11.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry11.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry11.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry11.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry11.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry11.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry11.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry11.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry11.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry12 in entries12 %}
+<table width="200" border="0" id="data" class="once">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry12.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry12.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry12.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry12.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry12.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry12.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry12.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry12.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry12.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry12.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry12.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry12.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry12.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry12.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry12.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry12.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry13 in entries13 %}
+<table width="200" border="0" id="data" class="doce">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry13.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry13.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry13.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry13.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry13.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry13.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry13.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry13.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry13.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry13.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry13.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry13.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry13.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry13.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry13.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry13.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry14 in entries14 %}
+<table width="200" border="0" id="data" class="trece">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry14.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry14.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry14.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry14.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry14.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry14.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry14.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry14.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry14.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry14.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry14.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry14.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry14.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry14.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry14.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry14.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
 
-{% for entry4 in entries4 %}
-<table width="200" border="0" id="data3">
+
+{% for entry15 in entries15 %}
+<table width="200" border="0" id="data" class="catorce">
     <tr>
         <th>Año</th>
         <th>PIB</th>
     </tr>
     <tr>
         <td>1970</td>
-        <td>{{entry4.setenta}}</td>
+        <td>{{entry15.setenta}}</td>
     </tr>
     <tr>
         <td>1971</td>
-        <td>{{entry4.setentauno}}</td>
+        <td>{{entry15.setentauno}}</td>
     </tr>
     <tr>
         <td>1972</td>
-        <td>{{entry4.setentados}}</td>
+        <td>{{entry15.setentados}}</td>
     </tr>
     <tr>
         <td>1973</td>
-        <td>{{entry4.setentatres}}</td>
+        <td>{{entry15.setentatres}}</td>
     </tr>
     <tr>
         <td>1974</td>
-        <td>{{entry4.setentacuatro}}</td>
+        <td>{{entry15.setentacuatro}}</td>
     </tr>
     <tr>
         <td>1975</td>
-        <td>{{entry4.setentacinco}}</td>
+        <td>{{entry15.setentacinco}}</td>
     </tr>
     <tr>
         <td>1976</td>
-        <td>{{entry4.setentaseis}}</td>
+        <td>{{entry15.setentaseis}}</td>
     </tr>
     <tr>
         <td>1977</td>
-        <td>{{entry4.setentasiete}}</td>
+        <td>{{entry15.setentasiete}}</td>
     </tr>
     <tr>
         <td>1978</td>
-        <td>{{entry4.setentaocho}}</td>
+        <td>{{entry15.setentaocho}}</td>
     </tr>
     <tr>
         <td>1979</td>
-        <td>{{entry4.setentanueve}}</td>
+        <td>{{entry15.setentanueve}}</td>
     </tr>
     <tr>
         <td>1980</td>
-        <td>{{entry4.ochenta}}</td>
+        <td>{{entry15.ochenta}}</td>
     </tr>
     <tr>
         <td>1981</td>
-        <td>{{entry4.ochentauno}}</td>
+        <td>{{entry15.ochentauno}}</td>
     </tr>
     <tr>
         <td>1982</td>
-        <td>{{entry4.ochentados}}</td>
+        <td>{{entry15.ochentados}}</td>
     </tr>
     <tr>
         <td>1983</td>
-        <td>{{entry4.ochentatres}}</td>
+        <td>{{entry15.ochentatres}}</td>
     </tr>
     <tr>
         <td>1984</td>
-        <td>{{entry4.ochentacuatro}}</td>
+        <td>{{entry15.ochentacuatro}}</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>{{entry4.ochentacinco}}</td>
+        <td>{{entry15.ochentacinco}}</td>
     </tr>
 </table>
 {% endfor %}
 
-<canvas id="canvas3" width="800" height="300"></canvas>
+<div id="grafica">
+	<canvas id="canvas" width="800" height="300"></canvas>
+</div>
+</body>
 {% endblock content %}
